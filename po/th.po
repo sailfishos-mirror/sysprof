@@ -1,0 +1,1508 @@
+# Thai translation for sysprof.
+# Copyright (C) 2026 sysprof's COPYRIGHT HOLDER
+# This file is distributed under the same license as the sysprof package.
+# Aefgh Threenine <aefgh39622@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: sysprof master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/sysprof/issues/\n"
+"POT-Creation-Date: 2026-03-18 15:56+0000\n"
+"PO-Revision-Date: 2026-05-09 01:22+0700\n"
+"Last-Translator: \n"
+"Language-Team: Thai <th@li.org>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.9\n"
+
+#: data/org.gnome.Sysprof.desktop.in.in:3
+#: data/org.gnome.Sysprof.metainfo.xml.in.in:6
+#: src/sysprof/sysprof-application.c:268 src/sysprof/sysprof-application.c:316
+#: src/sysprof/sysprof-recording-pad.ui:20 src/sysprof/sysprof-window.c:253
+msgid "Sysprof"
+msgstr "Sysprof"
+
+#: data/org.gnome.Sysprof.desktop.in.in:4 src/sysprof/sysprof-greeter.ui:83
+msgid "Profiler"
+msgstr "วิเคราะห์ประสิทธิภาพ"
+
+#: data/org.gnome.Sysprof.desktop.in.in:5
+msgid "Profile an application or entire system."
+msgstr "วิเคราะห์ประสิทธิภาพของแอปพลิเคชันหรือทั้งระบบ"
+
+#: data/org.gnome.Sysprof.desktop.in.in:20
+msgid "Start New Recording"
+msgstr "เริ่มการบันทึกใหม่"
+
+#: data/org.gnome.Sysprof.metainfo.xml.in.in:7
+msgid "Profile an application or entire system"
+msgstr "วิเคราะห์ประสิทธิภาพของแอปพลิเคชันหรือทั้งระบบ"
+
+#. developer_name tag deprecated with Appstream 1.0
+#: data/org.gnome.Sysprof.metainfo.xml.in.in:11
+msgid "Christian Hergert"
+msgstr "Christian Hergert"
+
+#: data/org.gnome.Sysprof.metainfo.xml.in.in:17
+msgid ""
+"Sysprof allows you to profile applications to aid in debugging and "
+"optimization."
+msgstr ""
+"Sysprof "
+"ช่วยให้คุณสามารถวิเคราะห์ประสิทธิภาพของแอปพลิเคชันเพื่อช่วยในการดีบั๊กและการเพิ่มประสิทธิภาพ"
+
+#: src/libsysprof/sysprof-category-summary.c:136
+msgid "Uncategorized"
+msgstr "ไม่มีหมวดหมู่"
+
+#: src/libsysprof/sysprof-category-summary.c:139
+msgid "Accessibility"
+msgstr "สิ่งอำนวยความสะดวก"
+
+#: src/libsysprof/sysprof-category-summary.c:142
+msgid "Actions"
+msgstr "การกระทำ"
+
+#: src/libsysprof/sysprof-category-summary.c:145
+msgid "Crash Handler"
+msgstr "ตัวจัดการข้อขัดข้อง"
+
+#: src/libsysprof/sysprof-category-summary.c:148
+msgid "Context Switches"
+msgstr "การสลับบริบท"
+
+#: src/libsysprof/sysprof-category-summary.c:151
+msgid "CSS"
+msgstr "CSS"
+
+#: src/libsysprof/sysprof-category-summary.c:154
+#: src/sysprof/sysprof-greeter.ui:396 src/sysprof/sysprof-window.ui:387
+msgid "Graphics"
+msgstr "กราฟิก"
+
+#: src/libsysprof/sysprof-category-summary.c:157
+msgid "Icons"
+msgstr "ไอคอน"
+
+#: src/libsysprof/sysprof-category-summary.c:160
+msgid "Input"
+msgstr "อินพุต"
+
+#: src/libsysprof/sysprof-category-summary.c:163
+msgid "IO"
+msgstr "IO"
+
+#: src/libsysprof/sysprof-category-summary.c:166
+msgid "IPC"
+msgstr "IPC"
+
+#: src/libsysprof/sysprof-category-summary.c:169
+msgid "JavaScript"
+msgstr "JavaScript"
+
+#: src/libsysprof/sysprof-category-summary.c:172
+msgid "Kernel"
+msgstr "เคอร์เนล"
+
+#: src/libsysprof/sysprof-category-summary.c:175
+msgid "Layout"
+msgstr "การจัดวาง"
+
+#: src/libsysprof/sysprof-category-summary.c:178
+msgid "Locking"
+msgstr "การล็อก"
+
+#: src/libsysprof/sysprof-category-summary.c:181
+msgid "Main Loop"
+msgstr "ลูปหลัก"
+
+#: src/libsysprof/sysprof-category-summary.c:184
+msgid "Memory"
+msgstr "หน่วยความจำ"
+
+#: src/libsysprof/sysprof-category-summary.c:187
+msgid "Paint"
+msgstr "การวาด"
+
+#: src/libsysprof/sysprof-category-summary.c:190
+msgid "Type System"
+msgstr "ระบบชนิดข้อมูล"
+
+#: src/libsysprof/sysprof-category-summary.c:193
+msgid "Unwindable"
+msgstr "ย้อนรอยไม่ได้"
+
+#: src/libsysprof/sysprof-category-summary.c:196
+msgid "Windowing"
+msgstr "ระบบหน้าต่าง"
+
+#: src/libsysprof/sysprof-debuginfod-task.c:97
+msgid "Downloading Symbols…"
+msgstr "กำลังดาวน์โหลดสัญลักษณ์…"
+
+#: src/libsysprof/sysprof-document-allocation.c:151
+msgid "Allocation"
+msgstr "การจัดสรร"
+
+#: src/libsysprof/sysprof-document.c:570
+msgid "Unknown Process"
+msgstr "ไม่ทราบโปรเซส"
+
+#: src/libsysprof/sysprof-document.c:1251
+#: src/libsysprof/sysprof-document.c:1287
+msgid "Indexing capture data frames"
+msgstr "กำลังทำดัชนีเฟรมข้อมูลที่บันทึก"
+
+#: src/libsysprof/sysprof-document.c:1473
+msgid "Discovering file system mounts"
+msgstr "กำลังค้นพบจุดเมานต์ในระบบไฟล์"
+
+#: src/libsysprof/sysprof-document.c:1476
+msgid "Discovering process mount namespaces"
+msgstr "กำลังค้นพบ mount namespace ของโปรเซส"
+
+#: src/libsysprof/sysprof-document.c:1479
+msgid "Analyzing process address layouts"
+msgstr "กำลังวิเคราะห์แผนผังแอดเดรสของโปรเซส"
+
+#: src/libsysprof/sysprof-document.c:1482
+msgid "Analyzing process command line"
+msgstr "กำลังวิเคราะห์บรรทัดคำสั่งของโปรเซส"
+
+#: src/libsysprof/sysprof-document.c:1485
+msgid "Analyzing file system overlays"
+msgstr "กำลังวิเคราะห์การซ้อนทับของระบบไฟล์"
+
+#: src/libsysprof/sysprof-document.c:1488
+msgid "Processing counters"
+msgstr "กำลังประมวลผลตัวนับ"
+
+#: src/libsysprof/sysprof-document.c:2480
+#: src/libsysprof/sysprof-document.c:2499
+#, c-format
+msgid "Recording at %X %x"
+msgstr "บันทึกเมื่อ %X %x"
+
+#: src/libsysprof/sysprof-document.c:2483
+#: src/libsysprof/sysprof-document.c:2502
+#, c-format
+msgid "Recording at %s"
+msgstr "บันทึกเมื่อ %s"
+
+#: src/libsysprof/sysprof-document-dbus-message.c:152
+msgid "D-Bus Message"
+msgstr "ข้อความ D-Bus"
+
+#: src/libsysprof/sysprof-document-frame.c:139
+msgid "Frame"
+msgstr "เฟรม"
+
+#: src/libsysprof/sysprof-document-loader.c:499
+msgid "Document loaded"
+msgstr "โหลดเอกสารแล้ว"
+
+#: src/libsysprof/sysprof-document-loader.c:530
+msgid "Loading failed"
+msgstr "การโหลดล้มเหลว"
+
+#: src/libsysprof/sysprof-document-loader.c:542
+#: src/libsysprof/sysprof-document-symbols.c:276
+msgid "Symbolizing stack traces"
+msgstr "กำลังแปลงสแต็กเทรซเป็นสัญลักษณ์"
+
+#: src/libsysprof/sysprof-document-loader.c:611
+msgid "Loading document"
+msgstr "กำลังโหลดเอกสาร"
+
+#: src/libsysprof/sysprof-document-log.c:85
+msgid "Log"
+msgstr "ปูม"
+
+#: src/libsysprof/sysprof-document-mark.c:134
+msgid "Mark"
+msgstr "เครื่องหมาย"
+
+#: src/libsysprof/sysprof-document-process.c:293
+#, c-format
+msgid "%s [Process %d]"
+msgstr "%s [โปรเซส %d]"
+
+#: src/libsysprof/sysprof-document-process.c:295
+#, c-format
+msgid "Process %d"
+msgstr "โปรเซส %d"
+
+#: src/libsysprof/sysprof-document-sample.c:136
+msgid "Sample"
+msgstr "ตัวอย่าง"
+
+#: src/libsysprof/sysprof-system-logs.c:171
+msgid "System Logs"
+msgstr "ปูมของระบบ"
+
+#: src/libsysprof/sysprof-system-logs.c:172
+msgid "Recording system logs is not supported on your platform."
+msgstr "ไม่รองรับการบันทึกปูมของระบบบนแพลตฟอร์มของคุณ"
+
+#: src/libsysprof/sysprof-tracer.c:65
+msgid "Tracer"
+msgstr "ตัวติดตาม"
+
+#: src/libsysprof/sysprof-tracer.c:66
+msgid ""
+"Tracing requires spawning a program compiled with ‘-finstrument-functions’. "
+"Tracing will not be available."
+msgstr ""
+"การติดตามต้องการการสร้างโปรแกรมที่คอมไพล์พร้อม ‘-finstrument-functions’ "
+"ข้อมูลการติดตามจะไม่พร้อมใช้งาน"
+
+#: src/sysprof-cli/sysprof-cli.c:120
+#, c-format
+msgid "--merge requires at least 2 filename arguments"
+msgstr "--merge ต้องการอาร์กิวเมนต์ชื่อไฟล์อย่างน้อย 2 ตัว"
+
+#: src/sysprof-cli/sysprof-cli.c:319
+msgid "Disable CPU throttling while profiling [Deprecated for --power-profile]"
+msgstr ""
+"ปิดใช้งานการลดความเร็วซีพียูขณะวิเคราะห์ประสิทธิภาพ [เลิกใช้แล้วสำหรับ --power-profile]"
+
+#: src/sysprof-cli/sysprof-cli.c:320
+msgid "Make sysprof specific to a task [Deprecated]"
+msgstr "ให้ sysprof ทำงานเฉพาะงานใดงานหนึ่ง [เลิกใช้แล้ว]"
+
+#: src/sysprof-cli/sysprof-cli.c:320 src/sysprof/sysprof-frame-utility.ui:109
+#: src/sysprof/sysprof-logs-section.ui:181
+#: src/sysprof/sysprof-processes-section.ui:283
+#: src/sysprof/sysprof-traceables-utility.ui:52
+msgid "PID"
+msgstr "PID"
+
+#: src/sysprof-cli/sysprof-cli.c:321
+msgid "Run a command and profile the process"
+msgstr "เรียกใช้คำสั่งและวิเคราะห์ประสิทธิภาพโปรเซส"
+
+#: src/sysprof-cli/sysprof-cli.c:321
+msgid "COMMAND"
+msgstr "คำสั่ง"
+
+#: src/sysprof-cli/sysprof-cli.c:322
+msgid ""
+"Set environment variable for spawned process. Can be used multiple times."
+msgstr "กำหนดตัวแปรสภาพแวดล้อมสำหรับโปรเซสที่สร้าง สามารถใช้ได้หลายครั้ง"
+
+#: src/sysprof-cli/sysprof-cli.c:322
+msgid "VAR=VALUE"
+msgstr "ตัวแปร=ค่า"
+
+#: src/sysprof-cli/sysprof-cli.c:323
+msgid "Force overwrite the capture file"
+msgstr "บังคับเขียนทับไฟล์ที่บันทึก"
+
+#: src/sysprof-cli/sysprof-cli.c:324
+msgid "Disable recording of battery statistics"
+msgstr "ปิดใช้งานการบันทึกสถิติแบตเตอรี่"
+
+#: src/sysprof-cli/sysprof-cli.c:325
+msgid "Disable recording of CPU statistics"
+msgstr "ปิดใช้งานการบันทึกสถิติซีพียู"
+
+#: src/sysprof-cli/sysprof-cli.c:326
+msgid "Disable recording of Disk statistics"
+msgstr "ปิดใช้งานการบันทึกสถิติดิสก์"
+
+#: src/sysprof-cli/sysprof-cli.c:327
+msgid "Do not record stacktraces using Linux perf"
+msgstr "ไม่ต้องบันทึกสแต็กเทรซโดยใช้ Linux perf"
+
+#: src/sysprof-cli/sysprof-cli.c:328
+msgid "Do not append symbol name information from local machine"
+msgstr "ไม่ต้องพ่วงข้อมูลชื่อสัญลักษณ์จากเครื่อง"
+
+#: src/sysprof-cli/sysprof-cli.c:329
+msgid "Disable recording of memory statistics"
+msgstr "ปิดใช้งานการบันทึกสถิติหน่วยความจำ"
+
+#: src/sysprof-cli/sysprof-cli.c:330
+msgid "Disable recording of network statistics"
+msgstr "ปิดใช้งานการบันทึกสถิติเครือข่าย"
+
+#: src/sysprof-cli/sysprof-cli.c:331
+msgid "Set SYSPROF_TRACE_FD environment for subprocess"
+msgstr "กำหนดสภาพแวดล้อม SYSPROF_TRACE_FD สำหรับโปรเซสย่อย"
+
+#: src/sysprof-cli/sysprof-cli.c:332
+msgid "Track when processes are scheduled"
+msgstr "ติดตามว่าโปรเซสถูกจัดคิวเมื่อใด"
+
+#: src/sysprof-cli/sysprof-cli.c:333
+msgid "Profile the D-Bus session bus"
+msgstr "วิเคราะห์ประสิทธิภาพบัสของเซสชัน D-Bus"
+
+#: src/sysprof-cli/sysprof-cli.c:334
+msgid "Profile the D-Bus system bus"
+msgstr "วิเคราะห์ประสิทธิภาพบัสของระบบ D-Bus"
+
+#: src/sysprof-cli/sysprof-cli.c:335
+msgid "Set GJS_TRACE_FD environment to trace GJS processes"
+msgstr "กำหนดสภาพแวดล้อม GJS_TRACE_FD เพื่อติดตามโปรเซส GJS"
+
+#: src/sysprof-cli/sysprof-cli.c:336
+msgid "Set GTK_TRACE_FD environment to trace a GTK application"
+msgstr "กำหนดสภาพแวดล้อม GTK_TRACE_FD เพื่อติดตามแอปพลิเคชัน GTK"
+
+#: src/sysprof-cli/sysprof-cli.c:337
+msgid "Include RAPL energy statistics"
+msgstr "รวมสถิติการใช้พลังงาน RAPL"
+
+#: src/sysprof-cli/sysprof-cli.c:338
+msgid "Profile memory allocations and frees"
+msgstr "วิเคราะห์ประสิทธิภาพการจัดสรรและคืนหน่วยความจำ"
+
+#: src/sysprof-cli/sysprof-cli.c:339
+msgid "Connect to org.gnome.Shell for profiler statistics"
+msgstr "เชื่อมต่อกับ org.gnome.Shell เพื่อขอสถิติการวิเคราะห์ประสิทธิภาพ"
+
+#: src/sysprof-cli/sysprof-cli.c:340
+msgid "Track performance of the applications main loop"
+msgstr "ติดตามประสิทธิภาพของลูปหลักของแอปพลิเคชัน"
+
+#: src/sysprof-cli/sysprof-cli.c:342
+msgid "Merge all provided *.syscap files and write to stdout"
+msgstr "รวมไฟล์ *.syscap ทั้งหมดที่ระบุและเขียนลงเอาต์พุตมาตรฐาน"
+
+#: src/sysprof-cli/sysprof-cli.c:343
+msgid "Print the sysprof-cli version and exit"
+msgstr "แสดงเวอร์ชันของ sysprof-cli แล้วจบการทำงาน"
+
+#: src/sysprof-cli/sysprof-cli.c:344
+msgid "The size of the buffer in pages (1 = 1 page)"
+msgstr "ขนาดของบัฟเฟอร์ในหน่วยเพจ (1 = 1 เพจ)"
+
+#: src/sysprof-cli/sysprof-cli.c:345
+msgid "Additional D-Bus address to monitor"
+msgstr "แอดเดรส D-Bus เพิ่มเติมที่จะเฝ้าสังเกต"
+
+#: src/sysprof-cli/sysprof-cli.c:346
+msgid "Stack size to copy for unwinding in user-space"
+msgstr "ขนาดสแต็กที่จะคัดลอกสำหรับย้อนรอยในพื้นที่ผู้ใช้"
+
+#: src/sysprof-cli/sysprof-cli.c:347
+msgid "Do not use debuginfod to resolve symbols"
+msgstr "ไม่ต้องใช้ debuginfod เพื่อแปลงชื่อสัญลักษณ์"
+
+#: src/sysprof-cli/sysprof-cli.c:348
+msgid "Do not use Sysprofd to acquire privileges"
+msgstr "ไม่ต้องใช้ Sysprofd เพื่อขอสิทธิพิเศษ"
+
+#: src/sysprof-cli/sysprof-cli.c:382
+msgid "[CAPTURE_FILE] [-- COMMAND ARGS] — Sysprof"
+msgstr "[ไฟล์ที่บันทึก] [-- คำสั่ง อาร์กิวเมนต์] — Sysprof"
+
+#: src/sysprof-cli/sysprof-cli.c:385
+msgid ""
+"\n"
+"Examples:\n"
+"\n"
+"  # Record gtk4-widget-factory using trace-fd to get application provided\n"
+"  # data as well as GTK and GNOME Shell data providers\n"
+"  sysprof-cli --gtk --gnome-shell --use-trace-fd -- gtk4-widget-factory\n"
+"\n"
+"  # Merge multiple syscap files into one\n"
+"  sysprof-cli --merge a.syscap b.syscap > c.syscap\n"
+"\n"
+"  # Unwind by capturing stack/register contents instead of frame-pointers\n"
+"  # where the stack-size is a multiple of page-size\n"
+"  sysprof-cli --stack-size=8192\n"
+msgstr ""
+"\n"
+"ตัวอย่าง:\n"
+"\n"
+"  # บันทึกประสิทธิภาพของ gtk4-widget-factory โดยใช้ trace-fd เพื่ออ่านข้อมูลจาก\n"
+"  # ตัวจัดเตรียมข้อมูลของแอปพลิเคชันรวมทั้ง GTK และเชลล์ GNOME\n"
+"  sysprof-cli --gtk --gnome-shell --use-trace-fd -- gtk4-widget-factory\n"
+"\n"
+"  # รวมไฟล์ syscap หลายไฟล์ให้เป็นไฟล์เดียว\n"
+"  sysprof-cli --merge a.syscap b.syscap > c.syscap\n"
+"\n"
+"  # ย้อนรอยที่มาโดยบันทึกเนื้อหาสแต็ก/เรจิสเตอร์แทนที่จะเป็น Frame-pointer\n"
+"  # โดยขนาดสแต็กต้องเป็นจำนวนเท่าของขนาดเพจ\n"
+"  sysprof-cli --stack-size=8192\n"
+
+#: src/sysprof-cli/sysprof-cli.c:425
+#, c-format
+msgid "Too many arguments were passed to sysprof-cli:"
+msgstr "มีอาร์กิวเมนต์ที่ส่งไปยัง sysprof-cli มากเกินไป:"
+
+#. Translators: %s is a file name.
+#: src/sysprof-cli/sysprof-cli.c:482
+#, c-format
+msgid "%s exists. Use --force to overwrite\n"
+msgstr "มี %s อยู่แล้ว ใช้ --force เพื่อเขียนทับ\n"
+
+#: src/sysprofd/org.gnome.sysprof3.policy.in:13
+msgid "Profile the system"
+msgstr "วิเคราะห์ประสิทธิภาพระบบ"
+
+#: src/sysprofd/org.gnome.sysprof3.policy.in:14
+msgid "Authentication is required to profile the system."
+msgstr "ต้องยืนยันตัวตนเพื่อวิเคราะห์ประสิทธิภาพระบบ"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:6
+msgctxt "shortcut window"
+msgid "Recording View"
+msgstr "มุมมองการบันทึก"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:9
+msgctxt "shortcut window"
+msgid "Start New Recording"
+msgstr "เริ่มการบันทึกใหม่"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:15
+msgctxt "shortcut window"
+msgid "Save As"
+msgstr "บันทึกเป็น"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:25
+msgctxt "shortcut window"
+msgid "Toggle Visibility of Main Sidebar"
+msgstr "เปิด/ปิดการมองเห็นของแถบข้างหลัก"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:31
+msgctxt "shortcut window"
+msgid "Toggle Visibility of Stack Trace Sidebar"
+msgstr "เปิด/ปิดการมองเห็นของแถบข้างสแต็กเทรซ"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:39
+msgctxt "shortcut window"
+msgid "General"
+msgstr "ทั่วไป"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:42
+msgctxt "shortcut window"
+msgid "Open Recording"
+msgstr "เปิดการบันทึก"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:52
+msgctxt "shortcut window"
+msgid "Close Window"
+msgstr "ปิดหน้าต่าง"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:59
+msgctxt "shortcut window"
+msgid "Show Help"
+msgstr "แสดงวิธีใช้"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:65
+msgctxt "shortcut window"
+msgid "Show keyboard shortcuts"
+msgstr "แสดงปุ่มลัดแป้นพิมพ์"
+
+#: src/sysprof/gtk/shortcuts-dialog.ui:71
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr "ออก"
+
+#: src/sysprof/gtk/menus.ui:6
+msgid "Make Function Root"
+msgstr "ทำให้ฟังก์ชันเป็นราก"
+
+#: src/sysprof/gtk/menus.ui:11 src/sysprof/sysprof-process-dialog.ui:520
+msgid "Options"
+msgstr "ตัวเลือก"
+
+#: src/sysprof/gtk/menus.ui:13 src/sysprof/sysprof-window.ui:491
+msgid "Categorize Frames"
+msgstr "จัดหมวดหมู่เฟรม"
+
+#: src/sysprof/gtk/menus.ui:17 src/sysprof/sysprof-window.ui:495
+msgid "Hide System Libraries"
+msgstr "ช่อนไลบรารีระบบ"
+
+#: src/sysprof/gtk/menus.ui:21 src/sysprof/sysprof-window.ui:499
+msgid "Include Threads"
+msgstr "รวมเธรด"
+
+#: src/sysprof/gtk/menus.ui:25 src/sysprof/sysprof-window.ui:503
+msgid "Bottom Up"
+msgstr "จากล่างขึ้นบน"
+
+#: src/sysprof/gtk/menus.ui:29 src/sysprof/sysprof-window.ui:507
+msgid "Ignore Kernel Processes"
+msgstr "ละเว้นโปรเซสเคอร์เนล"
+
+#: src/sysprof/gtk/menus.ui:33 src/sysprof/sysprof-window.ui:511
+msgid "Ignore Process 0"
+msgstr "ละเว้นโปรเซส 0"
+
+#: src/sysprof/gtk/menus.ui:37 src/sysprof/sysprof-window.ui:515
+msgid "Merge Similar Processes"
+msgstr "รวมโปรเซสที่คล้ายกัน"
+
+#: src/sysprof/sysprof-animation.c:1038
+#, c-format
+msgid "Failed to find property %s in %s"
+msgstr "ไม่พบคุณสมบัติ %s ใน %s"
+
+#: src/sysprof/sysprof-animation.c:1047
+#, c-format
+msgid "Failed to retrieve va_list value: %s"
+msgstr "ไม่สามารถรับค่า va_list: %s"
+
+#: src/sysprof/sysprof-application.c:38
+msgid "Start a new recording"
+msgstr "เริ่มการบันทึกใหม่"
+
+#: src/sysprof/sysprof-application.c:39
+msgid "Show Sysprof version and exit"
+msgstr "แสดงเวอร์ชันของ Sysprof แล้วจบการทำงาน"
+
+#: src/sysprof/sysprof-application.c:277
+msgid "A system profiler"
+msgstr "เครื่องมือวิเคราะห์ประสิทธิภาพระบบ"
+
+#: src/sysprof/sysprof-application.c:278
+msgid "translator-credits"
+msgstr "Aefgh Threenine <aefgh39622@gmail.com>"
+
+#: src/sysprof/sysprof-callgraph-view.ui:22
+msgid "Functions"
+msgstr "ฟังก์ชัน"
+
+#: src/sysprof/sysprof-callgraph-view.ui:71
+msgid "Filter Functions"
+msgstr "กรองฟังก์ชัน"
+
+#: src/sysprof/sysprof-callgraph-view.ui:94
+msgid "Callers"
+msgstr "ผู้เรียก"
+
+#: src/sysprof/sysprof-callgraph-view.ui:146
+msgid "Descendants"
+msgstr "ตัวสืบทอด"
+
+#: src/sysprof/sysprof-counters-section.ui:26
+#: src/sysprof/sysprof-cpu-section.ui:169
+#: src/sysprof/sysprof-energy-section.ui:177
+#: src/sysprof/sysprof-graphics-section.ui:88
+#: src/sysprof/sysprof-network-section.ui:86
+#: src/sysprof/sysprof-storage-section.ui:86
+msgid "Counters Chart"
+msgstr "แผนภูมิตัวนับ"
+
+#: src/sysprof/sysprof-counters-section.ui:40
+#: src/sysprof/sysprof-cpu-section.ui:323
+#: src/sysprof/sysprof-energy-section.ui:312
+#: src/sysprof/sysprof-graphics-section.ui:223
+#: src/sysprof/sysprof-network-section.ui:291
+#: src/sysprof/sysprof-storage-section.ui:291
+msgid "Counters Table"
+msgstr "ตารางตัวนับ"
+
+#: src/sysprof/sysprof-cpu-section.ui:378
+#: src/sysprof/sysprof-dbus-section.ui:171
+#: src/sysprof/sysprof-energy-section.ui:348
+#: src/sysprof/sysprof-frame-utility.ui:49
+#: src/sysprof/sysprof-graphics-section.ui:259
+#: src/sysprof/sysprof-logs-section.ui:110
+#: src/sysprof/sysprof-metadata-section.ui:38
+#: src/sysprof/sysprof-network-section.ui:346
+#: src/sysprof/sysprof-process-dialog.ui:64
+#: src/sysprof/sysprof-processes-section.ui:215
+#: src/sysprof/sysprof-storage-section.ui:346
+#: src/sysprof/sysprof-traceables-utility.ui:23
+msgid "Time"
+msgstr "เวลา"
+
+#: src/sysprof/sysprof-cpu-section.ui:412
+#: src/sysprof/sysprof-energy-section.ui:382
+#: src/sysprof/sysprof-flame-graph.c:458
+#: src/sysprof/sysprof-graphics-section.ui:293
+#: src/sysprof/sysprof-marks-section.ui:234
+#: src/sysprof/sysprof-network-section.ui:380
+#: src/sysprof/sysprof-storage-section.ui:380
+msgid "Category"
+msgstr "หมวดหมู่"
+
+#: src/sysprof/sysprof-cpu-section.ui:450
+#: src/sysprof/sysprof-energy-section.ui:420
+#: src/sysprof/sysprof-graphics-section.ui:331
+#: src/sysprof/sysprof-marks-section.ui:268
+#: src/sysprof/sysprof-network-section.ui:418
+#: src/sysprof/sysprof-storage-section.ui:418
+msgid "Name"
+msgstr "ชื่อ"
+
+#: src/sysprof/sysprof-cpu-section.ui:488
+#: src/sysprof/sysprof-energy-section.ui:458
+#: src/sysprof/sysprof-graphics-section.ui:369
+#: src/sysprof/sysprof-metadata-section.ui:105
+#: src/sysprof/sysprof-network-section.ui:456
+#: src/sysprof/sysprof-storage-section.ui:456
+msgid "Value"
+msgstr "ค่า"
+
+#: src/sysprof/sysprof-cpu-section.ui:529
+msgid "CPU Info"
+msgstr "ข้อมูลซีพียู"
+
+#: src/sysprof/sysprof-cpu-section.ui:560
+#: src/sysprof/sysprof-process-dialog.ui:248
+msgid "ID"
+msgstr "ID"
+
+#: src/sysprof/sysprof-cpu-section.ui:595
+msgid "Core"
+msgstr "แกน"
+
+#: src/sysprof/sysprof-cpu-section.ui:630
+msgid "Model Name"
+msgstr "ชื่อรุ่น"
+
+#: src/sysprof/sysprof-dbus-section.ui:205
+msgid "Bus"
+msgstr "บัส"
+
+#: src/sysprof/sysprof-dbus-section.ui:244
+msgid "Serial"
+msgstr "ซีเรียล"
+
+#: src/sysprof/sysprof-dbus-section.ui:281
+msgid "Reply"
+msgstr "การตอบกลับ"
+
+#: src/sysprof/sysprof-dbus-section.ui:318
+msgid "Flags"
+msgstr "แฟล็ก"
+
+#: src/sysprof/sysprof-dbus-section.ui:347
+#: src/sysprof/sysprof-files-section.ui:122
+#: src/sysprof/sysprof-memory-callgraph-view.ui:68
+msgid "Size"
+msgstr "ขนาด"
+
+#: src/sysprof/sysprof-dbus-section.ui:383
+#: src/sysprof/sysprof-frame-utility.ui:20
+#: src/sysprof/sysprof-mark-table.ui:221
+msgid "Type"
+msgstr "ชนิด"
+
+#: src/sysprof/sysprof-dbus-section.ui:412
+msgid "Sender"
+msgstr "ผู้ส่ง"
+
+#: src/sysprof/sysprof-dbus-section.ui:446
+msgid "Destination"
+msgstr "ปลายทาง"
+
+#: src/sysprof/sysprof-dbus-section.ui:480
+#: src/sysprof/sysprof-files-section.ui:53
+msgid "Path"
+msgstr "พาธ"
+
+#: src/sysprof/sysprof-dbus-section.ui:514
+msgid "Interface"
+msgstr "อินเทอร์เฟซ"
+
+#: src/sysprof/sysprof-dbus-section.ui:548
+msgid "Member"
+msgstr "สมาชิก"
+
+#: src/sysprof/sysprof-dbus-section.ui:582
+msgid "Signature"
+msgstr "ลายเซ็น"
+
+#: src/sysprof/sysprof-dbus-section.ui:626
+msgid "Filter Messages"
+msgstr "กรองข้อความ"
+
+#: src/sysprof/sysprof-dbus-utility.ui:13
+#: src/sysprof/sysprof-logs-section.c:114
+#: src/sysprof/sysprof-logs-section.ui:290
+msgid "Message"
+msgstr "ข้อความ"
+
+#: src/sysprof/sysprof-files-section.ui:4
+msgid "Files"
+msgstr "ไฟล์"
+
+#: src/sysprof/sysprof-files-section.ui:88
+msgid "Compressed"
+msgstr "บีบอัด"
+
+#: src/sysprof/sysprof-files-section.ui:165
+msgid "Filter Files"
+msgstr "กรองไฟล์"
+
+#: src/sysprof/sysprof-flame-graph.c:462
+#: src/sysprof/sysprof-process-dialog.ui:177
+msgid "File"
+msgstr "ไฟล์"
+
+#: src/sysprof/sysprof-frame-utility.ui:80
+#: src/sysprof/sysprof-logs-section.ui:143
+#: src/sysprof/sysprof-mark-table.ui:116
+#: src/sysprof/sysprof-traceables-utility.ui:81
+#: src/sysprof/sysprof-window.ui:367
+msgid "CPU"
+msgstr "ซีพียู"
+
+#: src/sysprof/sysprof-greeter.c:144
+msgid "Use KEY=VALUE to set an environment variable"
+msgstr "ใช้ คีย์=ค่า เพื่อกำหนดตัวแปรสภาพแวดล้อม"
+
+#: src/sysprof/sysprof-greeter.c:150
+msgid "Keys may not start with a number"
+msgstr "คีย์ต้องไม่ขึ้นต้นด้วยตัวเลข"
+
+#: src/sysprof/sysprof-greeter.c:160
+msgid "Keys may only contain alpha-numerics or underline."
+msgstr "คีย์ต้องมีได้แค่ตัวอักษร ตัวเลข หรือขีดล่าง"
+
+#: src/sysprof/sysprof-greeter.c:357 src/sysprof/sysprof-window.c:172
+msgid "Must Capture to Local File"
+msgstr "ต้องบันทึกข้อมูลลงในไฟล์ในเครื่อง"
+
+#: src/sysprof/sysprof-greeter.c:359 src/sysprof/sysprof-window.c:173
+msgid "You must choose a local file to capture using Sysprof"
+msgstr "คุณต้องเลือกไฟล์ในเครื่องเพื่อบันทึกข้อมูลโดยใช้ Sysprof"
+
+#: src/sysprof/sysprof-greeter.c:361 src/sysprof/sysprof-greeter.c:401
+#: src/sysprof/sysprof-recording-pad.c:119 src/sysprof/sysprof-window.c:174
+#: src/sysprof/sysprof-window.c:751
+msgid "Close"
+msgstr "ปิด"
+
+#: src/sysprof/sysprof-greeter.c:399
+msgid "Must Select Local Folder"
+msgstr "ต้องเลือกโฟลเดอร์ในเครื่อง"
+
+#: src/sysprof/sysprof-greeter.c:400
+msgid "You must choose a local folder to add as a debug directory"
+msgstr "คุณต้องเลือกโฟลเดอร์ในเครื่องเพื่อเพิ่มเป็นไดเรกทอรีดีบั๊ก"
+
+#: src/sysprof/sysprof-greeter.c:420
+msgid "Add debug directory"
+msgstr "เพิ่มไดเรกทอรีดีบั๊ก"
+
+#: src/sysprof/sysprof-greeter.c:421 src/sysprof/sysprof-greeter.ui:589
+msgid "Add _Directory"
+msgstr "เพิ่มไ_ดเรกทอรี"
+
+#: src/sysprof/sysprof-greeter.c:445
+#, c-format
+msgid "System Capture from %s.syscap"
+msgstr "บันทึกข้อมูลประสิทธิภาพจาก %s.syscap"
+
+#: src/sysprof/sysprof-greeter.c:449
+msgid "Record to File"
+msgstr "บันทึกลงในไฟล์"
+
+#: src/sysprof/sysprof-greeter.c:450
+msgid "Record"
+msgstr "บันทึก"
+
+#: src/sysprof/sysprof-greeter.c:664
+msgid "No Change"
+msgstr "ไม่มีการเปลี่ยนแปลง"
+
+#: src/sysprof/sysprof-greeter.c:667
+msgid "Balanced"
+msgstr "สมดุล"
+
+#: src/sysprof/sysprof-greeter.c:670
+msgid "Power Saver"
+msgstr "ประหยัดพลังงาน"
+
+#: src/sysprof/sysprof-greeter.c:673
+msgid "Performance"
+msgstr "ประสิทธิภาพ"
+
+#: src/sysprof/sysprof-greeter.ui:89
+msgid "Sampling"
+msgstr "การสุ่มตัวอย่าง"
+
+#: src/sysprof/sysprof-greeter.ui:92
+msgid "Sample Native Stacks"
+msgstr "สุ่มตัวอย่างสแต็กระดับล่าง"
+
+#: src/sysprof/sysprof-greeter.ui:93
+msgid "Record native stack traces using a sampling profiler"
+msgstr "บันทึกสแต็กเทรซระดับล่างโดยใช้เครื่องมือวิเคราะห์ประสิทธิภาพการสุ่มตัวอย่าง"
+
+#: src/sysprof/sysprof-greeter.ui:99
+msgid "Unwind Stacks in User Space"
+msgstr "ย้อนรอยสแต็กในพื้นที่ผู้ใช้"
+
+#: src/sysprof/sysprof-greeter.ui:100
+msgid "Copy stack contents and registers for unwinding in user-space"
+msgstr "คัดลอกเนื้อหาสแต็กและเรจิสเตอร์สำหรับย้อนรอยในพื้นที่ผู้ใช้"
+
+#: src/sysprof/sysprof-greeter.ui:111
+msgid "Stack Size"
+msgstr "ขนาดสแต็ก"
+
+#: src/sysprof/sysprof-greeter.ui:112
+msgid "The number of bytes to copy from the stack"
+msgstr "จำนวนไบต์ที่จะคัดลอกจากสแต็ก"
+
+#: src/sysprof/sysprof-greeter.ui:123
+msgid ""
+"Unwinding in user-space has considerable overhead but may help in situations "
+"where frame-pointers are unavailable."
+msgstr ""
+"การย้อนรอยในพื้นที่ผู้ใช้จะทำให้เครื่องช้าลงอย่างเห็นได้ชัด แต่อาจมีประโยชน์ถ้าโปรแกรมนั้นไม่ได้ทำ "
+"frame-pointers มาให้"
+
+#: src/sysprof/sysprof-greeter.ui:138
+msgid "Sample JavaScript Stacks"
+msgstr "สุ่มตัวอย่างสแต็ก JavaScript"
+
+#: src/sysprof/sysprof-greeter.ui:139
+msgid "Record JavaScript stack traces using a sampling profiler"
+msgstr "บันทึกสแต็กเทรซ JavaScript โดยใช้เครื่องมือวิเคราะห์ประสิทธิภาพการสุ่มตัวอย่าง"
+
+#: src/sysprof/sysprof-greeter.ui:145
+msgid ""
+"Sysprof must launch your application to record JavaScript stacks using GJS."
+msgstr "Sysprof ต้องเรียกทำงานแอปพลิเคชันของคุณเพื่อบันทึกสแต็ก JavaScript โดยใช้ GJS"
+
+#: src/sysprof/sysprof-greeter.ui:160
+msgid "Record Scheduler Details"
+msgstr "บันทึกรายละเอียดตัวจัดตารางงาน"
+
+#: src/sysprof/sysprof-greeter.ui:161
+msgid "Track when processes are scheduled per CPU"
+msgstr "ติดตามว่าโปรเซสถูกจัดคิวเมื่อใดต่อซีพียูแต่ละตัว"
+
+#: src/sysprof/sysprof-greeter.ui:169
+msgid "Tracing"
+msgstr "การติดตาม"
+
+#: src/sysprof/sysprof-greeter.ui:172
+msgid "Trace Memory Allocations"
+msgstr "ติดตามการจัดสรรหน่วยความจำ"
+
+#: src/sysprof/sysprof-greeter.ui:173
+msgid "Record a stack trace when malloc or similar functions are used"
+msgstr "บันทึกสแต็กเทรซเมื่อมีการใช้ malloc หรือฟังก์ชันที่คล้ายกัน"
+
+#: src/sysprof/sysprof-greeter.ui:179
+msgid "Sysprof must launch your application to record memory allocations."
+msgstr "Sysprof ต้องเรียกทำงานแอปพลิเคชันของคุณเพื่อบันทึกการจัดสรรหน่วยความจำ"
+
+#: src/sysprof/sysprof-greeter.ui:197 src/sysprof/sysprof-greeter.ui:202
+msgid "Application"
+msgstr "แอปพลิเคชัน"
+
+#: src/sysprof/sysprof-greeter.ui:205
+#: src/sysprof/sysprof-processes-section.ui:317
+msgid "Command Line"
+msgstr "บรรทัดคำสั่ง"
+
+#: src/sysprof/sysprof-greeter.ui:211
+msgid "Working directory"
+msgstr "ไดเรกทอรีทำงาน"
+
+#: src/sysprof/sysprof-greeter.ui:217
+msgid "The application will be run as a subprocess of Sysprof."
+msgstr "แอปพลิเคชันจะทำงานเป็นโปรเซสย่อยของ Sysprof"
+
+#: src/sysprof/sysprof-greeter.ui:230
+msgid "Environment"
+msgstr "สภาพแวดล้อม"
+
+#: src/sysprof/sysprof-greeter.ui:233
+msgid "Clear Environment"
+msgstr "ล้างสภาพแวดล้อม"
+
+#: src/sysprof/sysprof-greeter.ui:234
+msgid "Clear the environment before launching application"
+msgstr "ล้างสภาพแวดล้อมก่อนเรียกทำงานแอปพลิเคชัน"
+
+#: src/sysprof/sysprof-greeter.ui:255
+msgid "Add _Variable"
+msgstr "เพิ่ม_ตัวแปร"
+
+#: src/sysprof/sysprof-greeter.ui:261
+msgid "Add Variable"
+msgstr "เพิ่มตัวแปร"
+
+#: src/sysprof/sysprof-greeter.ui:262
+msgid "_Add"
+msgstr "เ_พิ่ม"
+
+#: src/sysprof/sysprof-greeter.ui:279 src/sysprof/sysprof-greeter.ui:284
+msgid "Counters"
+msgstr "ตัวนับ"
+
+#: src/sysprof/sysprof-greeter.ui:287
+msgid "CPU Usage"
+msgstr "การใช้ซีพียู"
+
+#: src/sysprof/sysprof-greeter.ui:288
+msgid "Record coarse-grained counters about CPU usage and frequency"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับการใช้ซีพียูและความถี่"
+
+#: src/sysprof/sysprof-greeter.ui:294
+msgid "Memory Usage"
+msgstr "การใช้หน่วยความจำ"
+
+#: src/sysprof/sysprof-greeter.ui:295
+msgid "Record coarse-grained counters about system memory usage"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับการใช้หน่วยความจำของระบบ"
+
+#: src/sysprof/sysprof-greeter.ui:301
+msgid "Disk Usage"
+msgstr "การใช้ดิสก์"
+
+#: src/sysprof/sysprof-greeter.ui:302
+msgid "Record coarse-grained counters about storage throughput"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับปริมาณข้อมูลที่ผ่านเข้า-ออกในที่เก็บข้อมูล"
+
+#: src/sysprof/sysprof-greeter.ui:308
+msgid "Network Usage"
+msgstr "การใช้เครือข่าย"
+
+#: src/sysprof/sysprof-greeter.ui:309
+msgid "Record coarse-grained counters about network traffic"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับการรับ-ส่งข้อมูลทางเครือข่าย"
+
+#: src/sysprof/sysprof-greeter.ui:319
+msgid "Energy Usage"
+msgstr "การใช้พลังงาน"
+
+#: src/sysprof/sysprof-greeter.ui:320
+msgid "Record coarse-grained counters about energy usage in Watts"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับการใช้พลังงานในหน่วยวัตต์"
+
+#: src/sysprof/sysprof-greeter.ui:326
+msgid "Battery Charge"
+msgstr "การชาร์จแบตเตอรี่"
+
+#: src/sysprof/sysprof-greeter.ui:327
+msgid "Record coarse-grained counters about battery charge or discharge rates"
+msgstr "บันทึกข้อมูลภาพรวมกว้าง ๆ เกี่ยวกับอัตราการชาร์จและการคายประจุของแบตเตอรี่"
+
+#: src/sysprof/sysprof-greeter.ui:340 src/sysprof/sysprof-greeter.ui:345
+#: src/sysprof/sysprof-window.ui:357
+msgid "D-Bus"
+msgstr "D-Bus"
+
+#: src/sysprof/sysprof-greeter.ui:349
+msgid "Record System Bus"
+msgstr "บันทึกบัสของระบบ"
+
+#: src/sysprof/sysprof-greeter.ui:350
+msgid "Record messages on the D-Bus system bus"
+msgstr "บันทึกข้อความบนบัสของระบบ D-Bus"
+
+#: src/sysprof/sysprof-greeter.ui:366
+msgid "Record Session Bus"
+msgstr "บันทึกบัสของเซสชัน"
+
+#: src/sysprof/sysprof-greeter.ui:367
+msgid "Record messages on the D-Bus user session bus"
+msgstr "บันทึกข้อความบนบัสของเซสชัน D-Bus"
+
+#: src/sysprof/sysprof-greeter.ui:378
+msgid ""
+"The session bus may contain sensitive information such as keyboard usage and "
+"passwords."
+msgstr "บัสของเซสชันอาจมีข้อมูลอ่อนไหว เช่น การใช้แป้นพิมพ์ และรหัสผ่าน"
+
+#: src/sysprof/sysprof-greeter.ui:401
+msgid "Timings"
+msgstr "จังหวะเวลา"
+
+#: src/sysprof/sysprof-greeter.ui:405
+msgid "Compositor Frame Timings"
+msgstr "จังหวะเวลาการวาดเฟรมของคอมโพสิเตอร์"
+
+#: src/sysprof/sysprof-greeter.ui:406
+msgid "Record frame-timing information from the GNOME Shell compositor"
+msgstr "บันทึกข้อมูลจังหวะเวลาการวาดเฟรมจากคอมโพสิเตอร์ของเชลล์ GNOME"
+
+#: src/sysprof/sysprof-greeter.ui:417
+msgid ""
+"Applications launched by Sysprof will automatically collect GTK frame timing "
+"information."
+msgstr ""
+"แอปพลิเคชันที่ Sysprof เรียกทำงานจะรวบรวมข้อมูลจังหวะเวลาการวาดเฟรมใน GTK โดยอัตโนมัติ"
+
+#: src/sysprof/sysprof-greeter.ui:457
+msgid "Devices"
+msgstr "อุปกรณ์"
+
+#: src/sysprof/sysprof-greeter.ui:461
+msgid "Include GPU Information"
+msgstr "รวมข้อมูลจีพียู"
+
+#: src/sysprof/sysprof-greeter.ui:462
+msgid "Records information about graphics hardware and drivers"
+msgstr "บันทึกข้อมูลเกี่ยวกับฮาร์ดแวร์และไดรเวอร์กราฟิก"
+
+#: src/sysprof/sysprof-greeter.ui:480
+msgid "System"
+msgstr "ระบบ"
+
+#: src/sysprof/sysprof-greeter.ui:485
+msgid "Power Profile"
+msgstr "โปรไฟล์พลังงาน"
+
+#: src/sysprof/sysprof-greeter.ui:488
+msgid "Record with Power Profile"
+msgstr "บันทึกด้วยโปรไฟล์พลังงาน"
+
+#: src/sysprof/sysprof-greeter.ui:489
+msgid "Switch to power profile while recording"
+msgstr "สลับไปยังโปรไฟล์พลังงานขณะบันทึกข้อมูล"
+
+#: src/sysprof/sysprof-greeter.ui:499
+msgid "Details"
+msgstr "รายละเอียด"
+
+#: src/sysprof/sysprof-greeter.ui:503
+msgid "Record System Log"
+msgstr "บันทึกปูมของระบบ"
+
+#: src/sysprof/sysprof-greeter.ui:504
+msgid "Watch the system log for new messages and record them"
+msgstr "เฝ้าดูข้อความใหม่ในปูมของระบบและบันทึกข้อความเหล่านั้น"
+
+#: src/sysprof/sysprof-greeter.ui:520
+msgid "Include Hardware Information"
+msgstr "รวมข้อมูลฮาร์ดแวร์"
+
+#: src/sysprof/sysprof-greeter.ui:521
+msgid "Records information about PCI and USB devices"
+msgstr "บันทึกข้อมูลเกี่ยวกับอุปกรณ์ PCI และ USB"
+
+#: src/sysprof/sysprof-greeter.ui:534
+msgid "Symbols"
+msgstr "สัญลักษณ์"
+
+#: src/sysprof/sysprof-greeter.ui:538
+msgid "Bundle Symbols"
+msgstr "บรรจุสัญลักษณ์"
+
+#: src/sysprof/sysprof-greeter.ui:539
+msgid "Make recording shareable by symbolizing stack traces after recording"
+msgstr "ทำให้ผู้อื่นอ่านข้อมูลการบันทึกได้ด้วยการแปลงสแต็กเทรซเป็นสัญลักษณ์หลังการบันทึก"
+
+#: src/sysprof/sysprof-greeter.ui:555
+msgid "Debuginfod"
+msgstr "Debuginfod"
+
+#: src/sysprof/sysprof-greeter.ui:556
+msgid "Enable Debuginfod to automatically fetch debug symbols"
+msgstr "เปิดใช้งาน Debuginfod เพื่อดึงข้อมูลสัญลักษณ์ดีบั๊กโดยอัตโนมัติ"
+
+#: src/sysprof/sysprof-greeter.ui:569
+msgid "Debug File Directories"
+msgstr "ไดเรกทอรีไฟล์ดีบั๊ก"
+
+#: src/sysprof/sysprof-greeter.ui:570
+msgid "Directories to search for debug files"
+msgstr "ไดเรกทอรีที่จะค้นหาไฟล์ดีบั๊ก"
+
+#: src/sysprof/sysprof-greeter.ui:618
+msgid "_Open File…"
+msgstr "เ_ปิดไฟล์…"
+
+#: src/sysprof/sysprof-greeter.ui:625
+msgid "Record to _File…"
+msgstr "บันทึกลงในไ_ฟล์…"
+
+#: src/sysprof/sysprof-greeter.ui:632
+msgid "Record to _Memory"
+msgstr "บันทึกลงใน_หน่วยความจำ"
+
+#: src/sysprof/sysprof-greeter.ui:651 src/sysprof/sysprof-window.ui:468
+msgid "_Keyboard Shortcuts"
+msgstr "_ปุ่มลัดแป้นพิมพ์"
+
+#: src/sysprof/sysprof-greeter.ui:655 src/sysprof/sysprof-window.ui:472
+msgid "Help"
+msgstr "วิธีใช้"
+
+#: src/sysprof/sysprof-greeter.ui:659 src/sysprof/sysprof-window.ui:476
+msgid "About Sysprof"
+msgstr "เกี่ยวกับ Sysprof"
+
+#: src/sysprof/sysprof-logs-section.c:105
+msgid "Critical"
+msgstr "จุดวิกฤต"
+
+#: src/sysprof/sysprof-logs-section.c:108
+msgid "Warning"
+msgstr "คำเตือน"
+
+#: src/sysprof/sysprof-logs-section.c:111
+msgid "Debug"
+msgstr "ดีบั๊ก"
+
+#: src/sysprof/sysprof-logs-section.c:117
+msgid "Info"
+msgstr "ข้อมูล"
+
+#: src/sysprof/sysprof-logs-section.c:120
+msgid "Error"
+msgstr "ข้อผิดพลาด"
+
+#: src/sysprof/sysprof-logs-section.ui:4 src/sysprof/sysprof-logs-section.ui:30
+msgid "Logs"
+msgstr "ปูม"
+
+#: src/sysprof/sysprof-logs-section.ui:219
+msgid "Severity"
+msgstr "ระดับความรุนแรง"
+
+#: src/sysprof/sysprof-logs-section.ui:255
+msgid "Domain"
+msgstr "โดเมน"
+
+#: src/sysprof/sysprof-marks-section.ui:4
+msgid "Marks"
+msgstr "เครื่องหมาย"
+
+#: src/sysprof/sysprof-marks-section.ui:72
+msgid "Mark Chart"
+msgstr "แผนภูมิเครื่องหมาย"
+
+#: src/sysprof/sysprof-marks-section.ui:84
+msgid "Mark Table"
+msgstr "ตารางเครื่องหมาย"
+
+#: src/sysprof/sysprof-marks-section.ui:97
+msgid "Mark Waterfall"
+msgstr "กราฟน้ำตกเครื่องหมาย"
+
+#: src/sysprof/sysprof-marks-section.ui:198
+msgid "Summary"
+msgstr "สรุป"
+
+#: src/sysprof/sysprof-marks-section.ui:303
+msgid "Minimum"
+msgstr "ต่ำสุด"
+
+#: src/sysprof/sysprof-marks-section.ui:337
+msgid "Maximum"
+msgstr "สูงสุด"
+
+#: src/sysprof/sysprof-marks-section.ui:371
+msgid "Average"
+msgstr "ค่าเฉลี่ย"
+
+#: src/sysprof/sysprof-marks-section.ui:405
+msgid "Median"
+msgstr "มัธยฐาน"
+
+#: src/sysprof/sysprof-mark-chart-row.ui:8
+msgid "Toggle marks"
+msgstr "เปิด/ปิดเครื่องหมาย"
+
+#: src/sysprof/sysprof-mark-chart-row.ui:12
+msgid "Set as Filter"
+msgstr "ตั้งเป็นตัวกรอง"
+
+#: src/sysprof/sysprof-mark-table.ui:47
+msgid "Start"
+msgstr "จุดเริ่มต้น"
+
+#: src/sysprof/sysprof-mark-table.ui:81
+#: src/sysprof/sysprof-processes-section.ui:249
+msgid "Duration"
+msgstr "ระยะเวลา"
+
+#: src/sysprof/sysprof-mark-table.ui:151
+msgid "Process"
+msgstr "โปรเซส"
+
+#: src/sysprof/sysprof-mark-table.ui:186
+msgid "Group"
+msgstr "กลุ่ม"
+
+#: src/sysprof/sysprof-mark-table.ui:256
+msgid "Description"
+msgstr "คำอธิบาย"
+
+#: src/sysprof/sysprof-memory-callgraph-view.ui:8
+#: src/sysprof/sysprof-memory-callgraph-view.ui:105
+#: src/sysprof/sysprof-memory-callgraph-view.ui:172
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:8
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:105
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:172
+msgid "Self"
+msgstr "ทำงานเอง"
+
+#: src/sysprof/sysprof-memory-callgraph-view.ui:38
+#: src/sysprof/sysprof-memory-callgraph-view.ui:135
+#: src/sysprof/sysprof-memory-callgraph-view.ui:202
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:38
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:135
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:202
+msgid "Total"
+msgstr "ทั้งหมด"
+
+#: src/sysprof/sysprof-memory-section.ui:4
+msgid "Memory Allocations"
+msgstr "การจัดสรรหน่วยความจำ"
+
+#: src/sysprof/sysprof-memory-section.ui:29
+#: src/sysprof/sysprof-samples-section.ui:29
+msgid "Stack Traces"
+msgstr "สแต็กเทรซ"
+
+#: src/sysprof/sysprof-memory-section.ui:88
+msgid "Allocations"
+msgstr "การจัดสรร"
+
+#: src/sysprof/sysprof-memory-section.ui:144
+msgid "Leaks"
+msgstr "การรั่วไหล"
+
+#: src/sysprof/sysprof-memory-section.ui:212
+#: src/sysprof/sysprof-samples-section.ui:216
+#: src/sysprof/sysprof-traceables-utility.ui:162
+msgid "Stack Trace"
+msgstr "สแต็กเทรซ"
+
+#: src/sysprof/sysprof-metadata-section.ui:4
+msgid "Metadata"
+msgstr "ข้อมูลกำกับ"
+
+#: src/sysprof/sysprof-metadata-section.ui:71
+msgid "Key"
+msgstr "คีย์"
+
+#: src/sysprof/sysprof-process-dialog.ui:35
+msgid "Address Layout"
+msgstr "การจัดวางแอดเดรส"
+
+#: src/sysprof/sysprof-process-dialog.ui:97
+msgid "Start Address"
+msgstr "แอดเดรสเริ่มต้น"
+
+#: src/sysprof/sysprof-process-dialog.ui:137
+msgid "End Address"
+msgstr "แอดเดรสสิ้นสุด"
+
+#: src/sysprof/sysprof-process-dialog.ui:219
+msgid "Mounts"
+msgstr "การเมานต์"
+
+#: src/sysprof/sysprof-process-dialog.ui:282
+msgid "Parent"
+msgstr "ระดับบน"
+
+#: src/sysprof/sysprof-process-dialog.ui:316
+msgid "Major"
+msgstr "เลขหลัก"
+
+#: src/sysprof/sysprof-process-dialog.ui:350
+msgid "Minor"
+msgstr "เลขรอง"
+
+#: src/sysprof/sysprof-process-dialog.ui:384
+msgid "Mount Point"
+msgstr "จุดเมานต์"
+
+#: src/sysprof/sysprof-process-dialog.ui:418
+msgid "Mount Source"
+msgstr "ต้นทางการเมานต์"
+
+#: src/sysprof/sysprof-process-dialog.ui:452
+msgid "Root"
+msgstr "ราก"
+
+#: src/sysprof/sysprof-process-dialog.ui:486
+msgid "Filesystem"
+msgstr "ระบบไฟล์"
+
+#: src/sysprof/sysprof-process-dialog.ui:562
+msgid "Threads"
+msgstr "เธรด"
+
+#: src/sysprof/sysprof-process-dialog.ui:591
+msgid "Thread ID"
+msgstr "ID เธรด"
+
+#: src/sysprof/sysprof-process-dialog.ui:625
+msgid "Main Thread"
+msgstr "เธรดหลัก"
+
+#: src/sysprof/sysprof-processes-section.ui:4
+msgid "Processes"
+msgstr "โปรเซส"
+
+#: src/sysprof/sysprof-processes-section.ui:73
+msgid "Process Chart"
+msgstr "แผนภูมิโปรเซส"
+
+#: src/sysprof/sysprof-processes-section.ui:174
+msgid "Process Table"
+msgstr "ตารางโปรเซส"
+
+#. translators: this expands to the number of events recorded by the profiler as an indicator of progress
+#: src/sysprof/sysprof-recording-pad.c:58
+#, c-format
+msgid "%<PRIi64> events"
+msgstr "%<PRIi64> เหตุการณ์"
+
+#: src/sysprof/sysprof-recording-pad.c:115
+msgid "Recording Failed"
+msgstr "การบันทึกล้มเหลว"
+
+#: src/sysprof/sysprof-recording-pad.c:117
+#, c-format
+msgid ""
+"Sysprof failed to record.\n"
+"\n"
+"%s"
+msgstr ""
+"Sysprof บันทึกไม่สำเร็จ\n"
+"\n"
+"%s"
+
+#: src/sysprof/sysprof-recording-pad.ui:71
+msgid "Stop Recording"
+msgstr "หยุดบันทึก"
+
+#: src/sysprof/sysprof-samples-section.ui:4
+msgid "Time Profiler"
+msgstr "เครื่องมือวิเคราะห์ประสิทธิภาพเวลา"
+
+#: src/sysprof/sysprof-samples-section.ui:98 src/sysprof/sysprof-window.ui:489
+msgid "Callgraph"
+msgstr "กราฟการเรียก"
+
+#: src/sysprof/sysprof-samples-section.ui:181 src/sysprof/sysprof-window.ui:520
+msgid "Flamegraph"
+msgstr "กราฟรูปเปลวไฟ"
+
+#: src/sysprof/sysprof-session-filters-widget.ui:103
+msgid "Clear All Filters"
+msgstr "ล้างตัวกรองทั้งหมด"
+
+#: src/sysprof/sysprof-sidebar.ui:30 src/sysprof/sysprof-window.ui:160
+msgid "Seek Backward"
+msgstr "เลื่อนตำแหน่งย้อนกลับ"
+
+#: src/sysprof/sysprof-sidebar.ui:40 src/sysprof/sysprof-window.ui:170
+msgid "Zoom Out"
+msgstr "ซูมออก"
+
+#: src/sysprof/sysprof-sidebar.ui:50 src/sysprof/sysprof-window.ui:180
+msgid "Reset Zoom"
+msgstr "ล้างค่าการซูม"
+
+#: src/sysprof/sysprof-sidebar.ui:61 src/sysprof/sysprof-window.ui:190
+msgid "Zoom In"
+msgstr "ซูมเข้า"
+
+#: src/sysprof/sysprof-sidebar.ui:71 src/sysprof/sysprof-window.ui:200
+msgid "Seek Forward"
+msgstr "เลื่อนตำแหน่งไปข้างหน้า"
+
+#: src/sysprof/sysprof-traceables-utility.ui:109
+msgid "Depth"
+msgstr "ความลึก"
+
+#: src/sysprof/sysprof-weighted-callgraph-view.ui:68
+msgid "Hits"
+msgstr "จำนวนครั้งที่พบ"
+
+#: src/sysprof/sysprof-window.c:191
+msgid "Open Recording"
+msgstr "เปิดการบันทึก"
+
+#: src/sysprof/sysprof-window.c:192
+msgid "Open"
+msgstr "เปิด"
+
+#: src/sysprof/sysprof-window.c:196
+msgid "Sysprof Capture (*.syscap)"
+msgstr "ข้อมูลบันทึก Sysprof (*.syscap)"
+
+#: src/sysprof/sysprof-window.c:485
+msgid "Save to File"
+msgstr "บันทึกลงในไฟล์"
+
+#: src/sysprof/sysprof-window.c:486
+msgid "Save"
+msgstr "บันทึก"
+
+#: src/sysprof/sysprof-window.c:666
+msgid "Loading…"
+msgstr "กำลังโหลด…"
+
+#: src/sysprof/sysprof-window.c:747
+msgid "Invalid Document"
+msgstr "เอกสารไม่ถูกต้อง"
+
+#: src/sysprof/sysprof-window.c:749
+#, c-format
+msgid ""
+"The document could not be loaded. Please check that you have the correct "
+"capture file.\n"
+"\n"
+"%s"
+msgstr ""
+"ไม่สามารถโหลดเอกสารได้ โปรดตรวจสอบว่าคุณมีไฟล์ข้อมูลบันทึกที่ถูกต้อง\n"
+"\n"
+"%s"
+
+#: src/sysprof/sysprof-window.ui:120
+msgid "Toggle Left Panel"
+msgstr "สลับแผงด้านซ้าย"
+
+#: src/sysprof/sysprof-window.ui:127
+msgid "View Filters"
+msgstr "ดูตัวกรอง"
+
+#: src/sysprof/sysprof-window.ui:215
+msgid "Main Menu"
+msgstr "เมนูหลัก"
+
+#: src/sysprof/sysprof-window.ui:222
+msgid "View Options"
+msgstr "ตัวเลือกมุมมอง"
+
+#: src/sysprof/sysprof-window.ui:228
+msgid "Toggle Right Panel"
+msgstr "สลับแผงด้านขวา"
+
+#: src/sysprof/sysprof-window.ui:377
+msgid "Energy"
+msgstr "พลังงาน"
+
+#: src/sysprof/sysprof-window.ui:397
+msgid "Network"
+msgstr "เครือข่าย"
+
+#: src/sysprof/sysprof-window.ui:407
+msgid "Storage"
+msgstr "ที่เก็บข้อมูล"
+
+#: src/sysprof/sysprof-window.ui:454
+msgid "_Record Again…"
+msgstr "_บันทึกอีกครั้ง…"
+
+#: src/sysprof/sysprof-window.ui:458
+msgid "Open Recording…"
+msgstr "เปิดการบันทึก…"
+
+#: src/sysprof/sysprof-window.ui:462
+msgid "Save As…"
+msgstr "บันทึกเป็น…"
+
+#: src/sysprof/sysprof-window.ui:482
+msgid "_Quit"
+msgstr "_ออก"
+
+#. translators: Left Heavy means to sort larger (heavier) stack frames before others, starting from the left
+#: src/sysprof/sysprof-window.ui:523
+msgid "Left Heavy"
+msgstr "หนักซ้าย"
