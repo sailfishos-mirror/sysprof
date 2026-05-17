@@ -307,6 +307,7 @@ mapped_ring_buffer_new_writer (int fd)
   if ((buffer_size = lseek (fd, 0, SEEK_END)) < 0)
     {
       fprintf (stderr, "Failed to seek to end of file. Cannot determine buffer size.\n");
+      close (fd);
       return NULL;
     }
 
@@ -314,6 +315,7 @@ mapped_ring_buffer_new_writer (int fd)
   if (buffer_size < (page_size + page_size))
     {
       fprintf (stderr, "Buffer is too small, cannot continue.\n");
+      close (fd);
       return NULL;
     }
 
@@ -321,6 +323,7 @@ mapped_ring_buffer_new_writer (int fd)
   if ((buffer_size - page_size) > BUFFER_MAX_SIZE)
     {
       fprintf (stderr, "Buffer is too large, cannot continue.\n");
+      close (fd);
       return NULL;
     }
 
@@ -328,6 +331,7 @@ mapped_ring_buffer_new_writer (int fd)
   if ((buffer_size % page_size) != 0)
     {
       fprintf (stderr, "Invalid buffer size, not page aligned.\n");
+      close (fd);
       return NULL;
     }
 
@@ -437,8 +441,9 @@ mapped_ring_buffer_get_fd (MappedRingBuffer *self)
  *   or %NULL if there is not enough space.
  */
 void *
-mapped_ring_buffer_allocate (MappedRingBuffer *self,
-                             size_t            length)
+mapped_ring_buffer_allocate_with_reserve (MappedRingBuffer *self,
+                                          size_t            length,
+                                          size_t            reserve)
 {
   MappedRingHeader *header;
   uint32_t headpos;
@@ -449,6 +454,9 @@ mapped_ring_buffer_allocate (MappedRingBuffer *self,
   assert (length > 0);
   assert (length < self->body_size);
   assert ((length & 0x7) == 0);
+  assert ((reserve & 0x7) == 0);
+  assert (reserve < self->body_size);
+  assert (length + reserve < self->body_size);
 
   for (unsigned i = 0; i < 1000; i++)
     {
@@ -465,13 +473,14 @@ mapped_ring_buffer_allocate (MappedRingBuffer *self,
        * forward with an atomic write.
        */
 
-      if (tailpos == headpos)
+      if (tailpos == headpos &&
+          length + reserve < self->body_size)
         return get_body_at_pos (self, tailpos);
 
       if (headpos < tailpos)
         headpos += self->body_size;
 
-      if (tailpos + length < headpos)
+      if (tailpos + length + reserve < headpos)
         return get_body_at_pos (self, tailpos);
 
       if (self->has_failed)
@@ -483,6 +492,13 @@ mapped_ring_buffer_allocate (MappedRingBuffer *self,
   self->has_failed = true;
 
   return NULL;
+}
+
+void *
+mapped_ring_buffer_allocate (MappedRingBuffer *self,
+                             size_t            length)
+{
+  return mapped_ring_buffer_allocate_with_reserve (self, length, 0);
 }
 
 /**

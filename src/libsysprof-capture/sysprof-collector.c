@@ -227,6 +227,15 @@ send_all_blocking (int            fd,
   return true;
 }
 
+static void *
+collector_allocate (MappedRingBuffer *ring,
+                    size_t            length)
+{
+  return mapped_ring_buffer_allocate_with_reserve (ring,
+                                                   length,
+                                                   realign (sizeof (SysprofCaptureFrame)));
+}
+
 static int
 receive_fd_blocking (int peer_fd)
 {
@@ -508,7 +517,7 @@ sysprof_collector_allocate (SysprofCaptureAddress   alloc_addr,
 
     len = sizeof *ev + (sizeof (SysprofCaptureAllocation) * MAX_UNWIND_DEPTH);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         int n_addrs;
 
@@ -555,7 +564,7 @@ sysprof_collector_sample (SysprofBacktraceFunc  backtrace_func,
 
     len = sizeof *ev + (sizeof (SysprofCaptureSample) * MAX_UNWIND_DEPTH);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         int n_addrs;
 
@@ -591,7 +600,7 @@ sysprof_collector_trace (SysprofBacktraceFunc  backtrace_func,
 
     len = sizeof *ev + (sizeof (SysprofCaptureTrace) * MAX_UNWIND_DEPTH);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         int n_addrs;
 
@@ -641,7 +650,7 @@ sysprof_collector_mark (int64_t     time,
     sl = strlen (message);
     len = realign (sizeof *ev + sl + 1);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         ev->frame.len = len;
         ev->frame.type = SYSPROF_CAPTURE_FRAME_MARK;
@@ -707,7 +716,7 @@ sysprof_collector_mark_vprintf (int64_t     time,
 
     len = realign (sizeof *ev + sl + 1);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         ev->frame.len = len;
         ev->frame.type = SYSPROF_CAPTURE_FRAME_MARK;
@@ -746,7 +755,7 @@ sysprof_collector_log (int             severity,
     sl = strlen (message);
     len = realign (sizeof *ev + sl + 1);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         ev->frame.len = len;
         ev->frame.type = SYSPROF_CAPTURE_FRAME_LOG;
@@ -789,7 +798,7 @@ sysprof_collector_log_printf (int             severity,
     sl = strlen (formatted);
     len = realign (sizeof *ev + sl + 1);
 
-    if ((ev = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((ev = collector_allocate (collector->buffer, len)))
       {
         ev->frame.len = len;
         ev->frame.type = SYSPROF_CAPTURE_FRAME_LOG;
@@ -821,7 +830,7 @@ sysprof_collector_define_counters (const SysprofCaptureCounter *counters,
 
     len = realign (sizeof *def + (sizeof *counters * n_counters));
 
-    if ((def = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((def = collector_allocate (collector->buffer, len)))
       {
         def->frame.len = len;
         def->frame.type = SYSPROF_CAPTURE_FRAME_CTRDEF;
@@ -861,7 +870,7 @@ sysprof_collector_set_counters (const unsigned int               *counters_ids,
 
     len = realign (sizeof *set + (n_groups * sizeof (SysprofCaptureCounterValues)));
 
-    if ((set = mapped_ring_buffer_allocate (collector->buffer, len)))
+    if ((set = collector_allocate (collector->buffer, len)))
       {
         set->frame.len = len;
         set->frame.type = SYSPROF_CAPTURE_FRAME_CTRSET;

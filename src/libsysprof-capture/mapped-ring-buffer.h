@@ -107,6 +107,11 @@ void              mapped_ring_buffer_unref              (MappedRingBuffer       
 SYSPROF_INTERNAL
 void              mapped_ring_buffer_clear              (MappedRingBuffer         *self);
 SYSPROF_INTERNAL
+void             *mapped_ring_buffer_allocate_with_reserve
+                                                        (MappedRingBuffer         *self,
+                                                         size_t                    length,
+                                                         size_t                    reserve);
+SYSPROF_INTERNAL
 void             *mapped_ring_buffer_allocate           (MappedRingBuffer         *self,
                                                          size_t                    length);
 SYSPROF_INTERNAL

@@ -190,6 +190,36 @@ test_readwrite (void)
   mapped_ring_buffer_unref (ring);
 }
 
+static void
+test_allocate_with_reserve (void)
+{
+  MappedRingBuffer *reader;
+  MappedRingBuffer *writer;
+  gint64 *ptr;
+  int fd;
+
+  reader = mapped_ring_buffer_new_reader (4096*16);
+  g_assert_nonnull (reader);
+
+  fd = mapped_ring_buffer_get_fd (reader);
+  g_assert_cmpint (fd, >, -1);
+
+  writer = mapped_ring_buffer_new_writer (fd);
+  g_assert_nonnull (writer);
+
+  while ((ptr = mapped_ring_buffer_allocate_with_reserve (writer, sizeof *ptr, sizeof *ptr)))
+    {
+      *ptr = 1;
+      mapped_ring_buffer_advance (writer, sizeof *ptr);
+    }
+
+  ptr = mapped_ring_buffer_allocate (writer, sizeof *ptr);
+  g_assert_nonnull (ptr);
+
+  mapped_ring_buffer_unref (writer);
+  mapped_ring_buffer_unref (reader);
+}
+
 gint
 main (gint argc,
       gchar *argv[])
@@ -197,6 +227,7 @@ main (gint argc,
   g_test_init (&argc, &argv, NULL);
   g_test_add_func ("/MappedRingBuffer/basic_movements", test_basic_movements);
   g_test_add_func ("/MappedRingBuffer/readwrite", test_readwrite);
+  g_test_add_func ("/MappedRingBuffer/allocate_with_reserve", test_allocate_with_reserve);
   g_test_add_func ("/MappedRingBuffer/threaded_movements", test_threaded_movements);
   return g_test_run ();
 }
