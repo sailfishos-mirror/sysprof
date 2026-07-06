@@ -143,8 +143,12 @@ static void
 sysprof_session_filters_widget_dispose (GObject *object)
 {
   SysprofSessionFiltersWidget *self = (SysprofSessionFiltersWidget *)object;
+  GtkWidget *child;
 
   gtk_widget_dispose_template (GTK_WIDGET (self), SYSPROF_TYPE_SESSION_FILTERS_WIDGET);
+
+  while ((child = gtk_widget_get_first_child (GTK_WIDGET (self))))
+    gtk_widget_unparent (child);
 
   G_OBJECT_CLASS (sysprof_session_filters_widget_parent_class)->dispose (object);
 }
