@@ -1,15 +1,15 @@
 # Norwegian Bokmål translation for sysprof.
 # Copyright (C) 2026 sysprof's COPYRIGHT HOLDER
 # This file is distributed under the same license as the sysprof package.
-# Kjartan Maraas <kjartan.maraas@proton.me>, 2026.
+# Kjartan Maraas <kmaraas@gnome.org>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: sysprof master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/sysprof/issues/\n"
-"POT-Creation-Date: 2026-03-18 15:56+0000\n"
-"PO-Revision-Date: 2026-05-13 09:12+0200\n"
-"Last-Translator: Kjartan Maraas <kjartan.maraas@proton.me>\n"
+"POT-Creation-Date: 2026-06-30 01:14+0000\n"
+"PO-Revision-Date: 2026-07-09 12:26+0200\n"
+"Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <nb@li.org>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
@@ -49,11 +49,11 @@ msgstr "Christian Hergert"
 msgid ""
 "Sysprof allows you to profile applications to aid in debugging and "
 "optimization."
-msgstr ""
+msgstr "Sysprof lar deg profilere applikasjoner for å hjelpe med feilsøking og optimalisering."
 
 #: src/libsysprof/sysprof-category-summary.c:136
 msgid "Uncategorized"
-msgstr ""
+msgstr "Ikke kategorisert"
 
 #: src/libsysprof/sysprof-category-summary.c:139
 msgid "Accessibility"
@@ -106,7 +106,7 @@ msgstr "Kjerne"
 
 #: src/libsysprof/sysprof-category-summary.c:175
 msgid "Layout"
-msgstr ""
+msgstr "Utforming"
 
 #: src/libsysprof/sysprof-category-summary.c:178
 msgid "Locking"
@@ -114,7 +114,7 @@ msgstr "Låsing"
 
 #: src/libsysprof/sysprof-category-summary.c:181
 msgid "Main Loop"
-msgstr ""
+msgstr "Hovedløkke"
 
 #: src/libsysprof/sysprof-category-summary.c:184
 msgid "Memory"
@@ -126,7 +126,7 @@ msgstr ""
 
 #: src/libsysprof/sysprof-category-summary.c:190
 msgid "Type System"
-msgstr ""
+msgstr "Typesystem"
 
 #: src/libsysprof/sysprof-category-summary.c:193
 msgid "Unwindable"
@@ -134,7 +134,7 @@ msgstr ""
 
 #: src/libsysprof/sysprof-category-summary.c:196
 msgid "Windowing"
-msgstr ""
+msgstr "Vindussystem"
 
 #: src/libsysprof/sysprof-debuginfod-task.c:97
 msgid "Downloading Symbols…"
@@ -148,43 +148,43 @@ msgstr "Allokering"
 msgid "Unknown Process"
 msgstr "Ukjent prosess"
 
-#: src/libsysprof/sysprof-document.c:1251
-#: src/libsysprof/sysprof-document.c:1287
+#: src/libsysprof/sysprof-document.c:1267
+#: src/libsysprof/sysprof-document.c:1303
 msgid "Indexing capture data frames"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1473
+#: src/libsysprof/sysprof-document.c:1489
 msgid "Discovering file system mounts"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1476
+#: src/libsysprof/sysprof-document.c:1492
 msgid "Discovering process mount namespaces"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1479
+#: src/libsysprof/sysprof-document.c:1495
 msgid "Analyzing process address layouts"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1482
+#: src/libsysprof/sysprof-document.c:1498
 msgid "Analyzing process command line"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1485
+#: src/libsysprof/sysprof-document.c:1501
 msgid "Analyzing file system overlays"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:1488
+#: src/libsysprof/sysprof-document.c:1504
 msgid "Processing counters"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:2480
-#: src/libsysprof/sysprof-document.c:2499
+#: src/libsysprof/sysprof-document.c:2496
+#: src/libsysprof/sysprof-document.c:2515
 #, c-format
 msgid "Recording at %X %x"
 msgstr ""
 
-#: src/libsysprof/sysprof-document.c:2483
-#: src/libsysprof/sysprof-document.c:2502
+#: src/libsysprof/sysprof-document.c:2499
+#: src/libsysprof/sysprof-document.c:2518
 #, c-format
 msgid "Recording at %s"
 msgstr ""
@@ -195,15 +195,15 @@ msgstr "D-Bus melding"
 
 #: src/libsysprof/sysprof-document-frame.c:139
 msgid "Frame"
-msgstr ""
+msgstr "Ramme"
 
 #: src/libsysprof/sysprof-document-loader.c:499
 msgid "Document loaded"
-msgstr ""
+msgstr "Dokument lastet"
 
 #: src/libsysprof/sysprof-document-loader.c:530
 msgid "Loading failed"
-msgstr ""
+msgstr "Lasting feilet"
 
 #: src/libsysprof/sysprof-document-loader.c:542
 #: src/libsysprof/sysprof-document-symbols.c:276
@@ -220,7 +220,7 @@ msgstr "Logg"
 
 #: src/libsysprof/sysprof-document-mark.c:134
 msgid "Mark"
-msgstr ""
+msgstr "Merk"
 
 #: src/libsysprof/sysprof-document-process.c:293
 #, c-format
@@ -230,7 +230,7 @@ msgstr ""
 #: src/libsysprof/sysprof-document-process.c:295
 #, c-format
 msgid "Process %d"
-msgstr ""
+msgstr "Prosess %d"
 
 #: src/libsysprof/sysprof-document-sample.c:136
 msgid "Sample"
@@ -276,7 +276,7 @@ msgstr "PID"
 
 #: src/sysprof-cli/sysprof-cli.c:321
 msgid "Run a command and profile the process"
-msgstr ""
+msgstr "Kjør en kommando og profiler prosessen"
 
 #: src/sysprof-cli/sysprof-cli.c:321
 msgid "COMMAND"
@@ -425,36 +425,36 @@ msgstr ""
 
 #: src/sysprofd/org.gnome.sysprof3.policy.in:13
 msgid "Profile the system"
-msgstr ""
+msgstr "Profiler systemet"
 
 #: src/sysprofd/org.gnome.sysprof3.policy.in:14
 msgid "Authentication is required to profile the system."
-msgstr ""
+msgstr "Autentisering kreves for å profilere systemet."
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:6
 msgctxt "shortcut window"
 msgid "Recording View"
-msgstr ""
+msgstr "Opptaksvisning"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:9
 msgctxt "shortcut window"
 msgid "Start New Recording"
-msgstr ""
+msgstr "Start nytt opptak"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:15
 msgctxt "shortcut window"
 msgid "Save As"
-msgstr ""
+msgstr "Lagre som"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:25
 msgctxt "shortcut window"
 msgid "Toggle Visibility of Main Sidebar"
-msgstr ""
+msgstr "Slå av/på visning av hovedsidelinjen"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:31
 msgctxt "shortcut window"
 msgid "Toggle Visibility of Stack Trace Sidebar"
-msgstr ""
+msgstr "Slå av/på visning av sidelinjen for stabelsporing"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:39
 msgctxt "shortcut window"
@@ -464,7 +464,7 @@ msgstr "Generelt"
 #: src/sysprof/gtk/shortcuts-dialog.ui:42
 msgctxt "shortcut window"
 msgid "Open Recording"
-msgstr ""
+msgstr "Åpne opptak"
 
 #: src/sysprof/gtk/shortcuts-dialog.ui:52
 msgctxt "shortcut window"
@@ -500,11 +500,11 @@ msgstr ""
 
 #: src/sysprof/gtk/menus.ui:17 src/sysprof/sysprof-window.ui:495
 msgid "Hide System Libraries"
-msgstr ""
+msgstr "Skjul systembiblioteker"
 
 #: src/sysprof/gtk/menus.ui:21 src/sysprof/sysprof-window.ui:499
 msgid "Include Threads"
-msgstr ""
+msgstr "Ta med tråder"
 
 #: src/sysprof/gtk/menus.ui:25 src/sysprof/sysprof-window.ui:503
 msgid "Bottom Up"
@@ -534,15 +534,15 @@ msgstr ""
 
 #: src/sysprof/sysprof-application.c:38
 msgid "Start a new recording"
-msgstr ""
+msgstr "Start et nytt opptak"
 
 #: src/sysprof/sysprof-application.c:39
 msgid "Show Sysprof version and exit"
-msgstr ""
+msgstr "Vis Sysprof versjon og avslutt"
 
 #: src/sysprof/sysprof-application.c:277
 msgid "A system profiler"
-msgstr ""
+msgstr "Systemprofilering"
 
 #: src/sysprof/sysprof-application.c:278
 msgid "translator-credits"
