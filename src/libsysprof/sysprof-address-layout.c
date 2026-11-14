@@ -190,13 +190,10 @@ find_by_address (gconstpointer a,
   return 0;
 }
 
-SysprofDocumentMmap *
-sysprof_address_layout_lookup (SysprofAddressLayout *self,
-                               SysprofAddress        address)
+void
+sysprof_address_layout_prepare (SysprofAddressLayout *self)
 {
-  SysprofDocumentMmap **ret;
-
-  g_return_val_if_fail (SYSPROF_IS_ADDRESS_LAYOUT (self), NULL);
+  g_return_if_fail (SYSPROF_IS_ADDRESS_LAYOUT (self));
 
   if (self->mmaps_dirty)
     {
@@ -223,6 +220,17 @@ sysprof_address_layout_lookup (SysprofAddressLayout *self,
 
       g_list_model_items_changed (G_LIST_MODEL (self), 0, old_len, self->mmaps->len);
     }
+}
+
+SysprofDocumentMmap *
+sysprof_address_layout_lookup (SysprofAddressLayout *self,
+                               SysprofAddress        address)
+{
+  SysprofDocumentMmap **ret;
+
+  g_return_val_if_fail (SYSPROF_IS_ADDRESS_LAYOUT (self), NULL);
+
+  sysprof_address_layout_prepare (self);
 
   if (self->mmaps->len > 0)
     ret = bsearch (&address,

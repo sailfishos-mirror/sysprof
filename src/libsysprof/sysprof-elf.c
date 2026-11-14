@@ -43,6 +43,14 @@ struct _SysprofElf
   ElfParser *parser;
   guint64 file_inode;
   gulong text_offset;
+#if HAVE_LIBDW
+  GMutex       source_mutex;
+  GArray      *source_segments;
+  Dwfl        *source_dwfl;
+  Dwfl_Module *source_module;
+  Dwarf_Addr   source_bias;
+  gboolean     source_initialized;
+#endif
 };
 
 enum {
@@ -222,10 +230,93 @@ static const struct {
   { "libappstream-glib.so", "App Store" },
 };
 
+#if HAVE_LIBDW
+static void
+clear_source (SysprofElf *self)
+{
+  g_assert (SYSPROF_IS_ELF (self));
+
+  g_clear_pointer (&self->source_dwfl, dwfl_end);
+  g_clear_pointer (&self->source_segments, g_array_unref);
+  self->source_module = NULL;
+  self->source_bias = 0;
+  self->source_initialized = FALSE;
+}
+
+static gboolean
+ensure_source (SysprofElf *self)
+{
+  static const Dwfl_Callbacks callbacks = {
+    .find_debuginfo = dwfl_standard_find_debuginfo,
+    .section_address = dwfl_offline_section_address,
+  };
+  Elf *elf = NULL;
+  GElf_Phdr phdr;
+  size_t n_headers;
+  const char *path;
+  int fd = -1;
+
+  g_assert (SYSPROF_IS_ELF (self));
+
+  if (self->source_initialized)
+    return self->source_module != NULL;
+
+  self->source_initialized = TRUE;
+
+  if (elf_version (EV_CURRENT) == EV_NONE ||
+      (fd = open (self->file, O_RDONLY | O_CLOEXEC)) < 0 ||
+      (elf = elf_begin (fd, ELF_C_READ, NULL)) == NULL ||
+      elf_getphdrnum (elf, &n_headers) != 0)
+    goto failure;
+
+  self->source_segments = g_array_new (FALSE, FALSE, sizeof (GElf_Phdr));
+
+  for (size_t i = 0; i < n_headers; i++)
+    {
+      if (gelf_getphdr (elf, i, &phdr) == NULL)
+        goto failure;
+
+      if (phdr.p_type == PT_LOAD)
+        g_array_append_val (self->source_segments, phdr);
+    }
+
+  elf_end (elf);
+  elf = NULL;
+  close (fd);
+  fd = -1;
+
+  path = self->debug_link_elf != NULL ? self->debug_link_elf->file : self->file;
+
+  if ((self->source_dwfl = dwfl_begin (&callbacks)) == NULL ||
+      (self->source_module = dwfl_report_offline (self->source_dwfl, path, path, -1)) == NULL ||
+      dwfl_report_end (self->source_dwfl, NULL, NULL) != 0 ||
+      dwfl_module_getdwarf (self->source_module, &self->source_bias) == NULL)
+    goto failure;
+
+  return TRUE;
+
+failure:
+  if (elf != NULL)
+    elf_end (elf);
+  if (fd >= 0)
+    close (fd);
+
+  clear_source (self);
+  self->source_initialized = TRUE;
+
+  return FALSE;
+}
+#endif
+
 static void
 sysprof_elf_finalize (GObject *object)
 {
   SysprofElf *self = (SysprofElf *)object;
+
+#if HAVE_LIBDW
+  clear_source (self);
+  g_mutex_clear (&self->source_mutex);
+#endif
 
   g_clear_pointer (&self->file, g_free);
   g_clear_pointer (&self->parser, elf_parser_free);
@@ -328,6 +419,9 @@ sysprof_elf_class_init (SysprofElfClass *klass)
 static void
 sysprof_elf_init (SysprofElf *self)
 {
+#if HAVE_LIBDW
+  g_mutex_init (&self->source_mutex);
+#endif
 }
 
 static void
@@ -487,23 +581,13 @@ sysprof_elf_resolve_source_location (SysprofElf            *self,
                                      guint64                file_offset)
 {
 #if HAVE_LIBDW
-  static const Dwfl_Callbacks callbacks = {
-    .find_debuginfo = dwfl_standard_find_debuginfo,
-    .section_address = dwfl_offline_section_address,
-  };
   g_autoptr(GFile) file = NULL;
   g_autofree char *source_path = NULL;
   g_autofree char *canonical_path = NULL;
   g_autofree char *selected_path = NULL;
   g_auto(GStrv) translated_paths = NULL;
-  Dwfl *dwfl = NULL;
-  Dwfl_Module *module;
   Dwfl_Line *source_line;
-  Elf *elf = NULL;
-  GElf_Ehdr ehdr;
-  GElf_Phdr phdr;
   SysprofSourceLocation *location = NULL;
-  const char *path;
   const char *source;
   Dwarf_Addr vaddr = 0;
   gboolean found = FALSE;
@@ -511,46 +595,37 @@ sysprof_elf_resolve_source_location (SysprofElf            *self,
   gboolean in_podman;
   int line = 0;
   int column = 0;
-  int fd = -1;
 
   g_return_val_if_fail (SYSPROF_IS_ELF (self), NULL);
   g_return_val_if_fail (mount_namespace == NULL || SYSPROF_IS_MOUNT_NAMESPACE (mount_namespace), NULL);
 
-  /* Convert the offset used by the capture's mmap into the ELF virtual
-   * address used by the DWARF line table. */
-  if (elf_version (EV_CURRENT) == EV_NONE ||
-      (fd = open (self->file, O_RDONLY | O_CLOEXEC)) < 0 ||
-      (elf = elf_begin (fd, ELF_C_READ, NULL)) == NULL ||
-      gelf_getehdr (elf, &ehdr) == NULL)
+  g_mutex_lock (&self->source_mutex);
+
+  if (!ensure_source (self))
     goto out;
 
-  for (size_t i = 0; i < ehdr.e_phnum; i++)
+  /* Captured mmap offsets are file offsets; DWARF uses virtual addresses. */
+  for (guint i = 0; i < self->source_segments->len; i++)
     {
-      if (gelf_getphdr (elf, i, &phdr) == NULL)
-        goto out;
+      const GElf_Phdr *phdr = &g_array_index (self->source_segments, GElf_Phdr, i);
+      guint64 delta;
 
-      if (phdr.p_type == PT_LOAD &&
-          file_offset >= phdr.p_offset &&
-          file_offset - phdr.p_offset < phdr.p_filesz)
+      if (file_offset < phdr->p_offset)
+        continue;
+
+      delta = file_offset - phdr->p_offset;
+      if (delta < phdr->p_filesz && delta <= G_MAXUINT64 - phdr->p_vaddr)
         {
-          vaddr = phdr.p_vaddr + file_offset - phdr.p_offset;
+          vaddr = phdr->p_vaddr + delta;
           found = TRUE;
           break;
         }
     }
 
-  if (!found)
+  if (!found || vaddr > G_MAXUINT64 - self->source_bias)
     goto out;
 
-  path = self->debug_link_elf != NULL ? self->debug_link_elf->file : self->file;
-
-  if ((dwfl = dwfl_begin (&callbacks)) == NULL)
-    goto out;
-  if ((module = dwfl_report_offline (dwfl, path, path, -1)) == NULL)
-    goto out;
-  if (dwfl_report_end (dwfl, NULL, NULL) != 0)
-    goto out;
-  if ((source_line = dwfl_module_getsrc (module, vaddr)) == NULL)
+  if ((source_line = dwfl_module_getsrc (self->source_module, vaddr + self->source_bias)) == NULL)
     goto out;
   if ((source = dwfl_lineinfo (source_line, NULL, &line, &column, NULL, NULL)) == NULL)
     goto out;
@@ -616,12 +691,7 @@ sysprof_elf_resolve_source_location (SysprofElf            *self,
   location = _sysprof_source_location_new (file, MAX (line, 0), MAX (column, 0));
 
 out:
-  if (dwfl != NULL)
-    dwfl_end (dwfl);
-  if (elf != NULL)
-    elf_end (elf);
-  if (fd >= 0)
-    close (fd);
+  g_mutex_unlock (&self->source_mutex);
 
   return location;
 #else
@@ -653,11 +723,25 @@ void
 sysprof_elf_set_debug_link_elf (SysprofElf *self,
                                 SysprofElf *debug_link_elf)
 {
+  gboolean changed;
+
   g_return_if_fail (SYSPROF_IS_ELF (self));
   g_return_if_fail (!debug_link_elf || SYSPROF_IS_ELF (debug_link_elf));
   g_return_if_fail (debug_link_elf != self);
 
-  if (g_set_object (&self->debug_link_elf, debug_link_elf))
+#if HAVE_LIBDW
+  g_mutex_lock (&self->source_mutex);
+#endif
+
+  changed = g_set_object (&self->debug_link_elf, debug_link_elf);
+
+#if HAVE_LIBDW
+  if (changed)
+    clear_source (self);
+  g_mutex_unlock (&self->source_mutex);
+#endif
+
+  if (changed)
     g_object_notify_by_pspec (G_OBJECT (self), properties [PROP_DEBUG_LINK_ELF]);
 }
 

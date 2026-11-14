@@ -30,10 +30,11 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (SysprofAddressLayout, sysprof_address_layout, SYSPROF, ADDRESS_LAYOUT, GObject)
 
-SysprofAddressLayout *sysprof_address_layout_new    (void);
-void                  sysprof_address_layout_take   (SysprofAddressLayout *self,
-                                                     SysprofDocumentMmap  *map);
-SysprofDocumentMmap  *sysprof_address_layout_lookup (SysprofAddressLayout *self,
-                                                     SysprofAddress        address);
+SysprofAddressLayout *sysprof_address_layout_new     (void);
+void                  sysprof_address_layout_take    (SysprofAddressLayout *self,
+                                                      SysprofDocumentMmap  *map);
+SysprofDocumentMmap  *sysprof_address_layout_lookup  (SysprofAddressLayout *self,
+                                                      SysprofAddress        address);
+void                  sysprof_address_layout_prepare (SysprofAddressLayout *self);
 
 G_END_DECLS

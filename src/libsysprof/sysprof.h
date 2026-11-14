@@ -94,6 +94,8 @@ G_BEGIN_DECLS
 # include "sysprof-subprocess-output.h"
 # include "sysprof-symbol.h"
 # include "sysprof-source-location.h"
+# include "sysprof-source-file.h"
+# include "sysprof-source-profile.h"
 # include "sysprof-symbolizer.h"
 # include "sysprof-symbols-bundle.h"
 # include "sysprof-system-logs.h"

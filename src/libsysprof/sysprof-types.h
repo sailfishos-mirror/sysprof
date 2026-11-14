@@ -26,9 +26,11 @@
 
 G_BEGIN_DECLS
 
-typedef struct _SysprofGpuJobs      SysprofGpuJobs;
-typedef struct _SysprofGraphicsInfo SysprofGraphicsInfo;
-typedef struct _SysprofHardwareInfo SysprofHardwareInfo;
+typedef struct _SysprofGpuJobs       SysprofGpuJobs;
+typedef struct _SysprofGraphicsInfo  SysprofGraphicsInfo;
+typedef struct _SysprofHardwareInfo  SysprofHardwareInfo;
+typedef struct _SysprofSourceFile    SysprofSourceFile;
+typedef struct _SysprofSourceProfile SysprofSourceProfile;
 
 /*<private>
  * SYSPROF_DECLARE_INTERNAL_TYPE:

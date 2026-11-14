@@ -30,8 +30,9 @@
 #include "sysprof-document-file.h"
 #include "sysprof-document-process.h"
 #include "sysprof-document-traceable.h"
-#include "sysprof-source-location.h"
 #include "sysprof-mark-catalog.h"
+#include "sysprof-source-location.h"
+#include "sysprof-source-profile.h"
 #include "sysprof-symbol.h"
 #include "sysprof-time-span.h"
 
@@ -162,5 +163,14 @@ guint                   sysprof_document_symbolize_traceable                 (Sy
                                                                               SysprofSymbol            **symbols,
                                                                               guint                      n_symbols,
                                                                               SysprofAddressContext     *final_context);
+SYSPROF_AVAILABLE_IN_52
+void                    sysprof_document_source_profile_async                (SysprofDocument           *self,
+                                                                              GCancellable              *cancellable,
+                                                                              GAsyncReadyCallback        callback,
+                                                                              gpointer                   user_data);
+SYSPROF_AVAILABLE_IN_52
+SysprofSourceProfile   *sysprof_document_source_profile_finish               (SysprofDocument           *self,
+                                                                              GAsyncResult              *result,
+                                                                              GError                   **error);
 
 G_END_DECLS

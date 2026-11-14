@@ -31,6 +31,7 @@
 
 #include "sysprof-document-private.h"
 #include "sysprof-document-storage-private.h"
+#include "sysprof-source-profile-private.h"
 
 #include "sysprof-bundled-symbolizer-private.h"
 #include "sysprof-callgraph-private.h"
@@ -743,6 +744,8 @@ sysprof_document_init (SysprofDocument *self)
 static void
 sysprof_document_load_memory_maps (SysprofDocument *self)
 {
+  GHashTableIter process_iter;
+  gpointer value;
   EggBitsetIter iter;
   guint i;
 
@@ -759,6 +762,14 @@ sysprof_document_load_memory_maps (SysprofDocument *self)
           sysprof_address_layout_take (process_info->address_layout, g_steal_pointer (&map));
         }
       while (egg_bitset_iter_next (&iter, &i));
+    }
+
+  g_hash_table_iter_init (&process_iter, self->pid_to_process_info);
+  while (g_hash_table_iter_next (&process_iter, NULL, &value))
+    {
+      SysprofProcessInfo *process_info = value;
+
+      sysprof_address_layout_prepare (process_info->address_layout);
     }
 }
 
@@ -4337,4 +4348,67 @@ _sysprof_document_storage_copy_named_marks (SysprofDocumentStorage *self,
     }
 
   return bits;
+}
+
+/**
+ * sysprof_document_source_profile_async:
+ * @self: a document
+ * @cancellable: (nullable): a cancellable
+ * @callback: (scope async) (nullable): completion callback
+ * @user_data: callback data
+ *
+ * Builds a source-line index of all CPU samples in the capture on a worker
+ * thread. Each sample has equal weight. Self counts refer to the first actual
+ * frame, even if that frame cannot be resolved. Inclusive counts include
+ * resolved user-space callers, adjusting return addresses to the preceding
+ * instruction and counting each file/line only once per sample.
+ *
+ * Resolution uses ELF mappings, DWARF line tables and the debug directories
+ * configured on the document loader's ELF symbolizer. Missing debug information,
+ * kernel frames and JIT frames are skipped; an empty profile is a valid result.
+ * Builds without libdw fail with %G_IO_ERROR_NOT_SUPPORTED. Inline call chains
+ * are not expanded beyond the location supplied by the DWARF line table.
+ *
+ * Since: 52
+ */
+void
+sysprof_document_source_profile_async (SysprofDocument     *self,
+                                       GCancellable        *cancellable,
+                                       GAsyncReadyCallback  callback,
+                                       gpointer             user_data)
+{
+  g_autoptr(DexAsyncResult) result = NULL;
+
+  g_return_if_fail (SYSPROF_IS_DOCUMENT (self));
+  g_return_if_fail (cancellable == NULL || G_IS_CANCELLABLE (cancellable));
+
+  result = dex_async_result_new (self, cancellable, callback, user_data);
+  dex_async_result_await (result,
+                          _sysprof_source_profile_new (self,
+                                                       (const char * const *)self->source_debug_dirs,
+                                                       (const char * const *)self->source_external_debug_dirs,
+                                                       cancellable));
+}
+
+/**
+ * sysprof_document_source_profile_finish:
+ * @self: a document
+ * @result: the asynchronous result
+ * @error: return location for an error
+ *
+ * Completes [method@Document.source_profile_async]. The returned profile is
+ * immutable and can be retained independently of the document.
+ *
+ * Returns: (transfer full) (nullable): the profile, or %NULL on error
+ * Since: 52
+ */
+SysprofSourceProfile *
+sysprof_document_source_profile_finish (SysprofDocument  *self,
+                                        GAsyncResult     *result,
+                                        GError          **error)
+{
+  g_return_val_if_fail (SYSPROF_IS_DOCUMENT (self), NULL);
+  g_return_val_if_fail (DEX_IS_ASYNC_RESULT (result), NULL);
+
+  return dex_async_result_propagate_pointer (DEX_ASYNC_RESULT (result), error);
 }
